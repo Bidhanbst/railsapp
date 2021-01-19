@@ -1,0 +1,14 @@
+postgres_packages:
+- postgresql
+- postgresql-contrib
+- libpq-dev
+- python-psycopg2
+
+ruby_packages:
+- software-properties-common
+- ruby2.4
+
+db_user: test
+db_name: railsblogsample
+db_password: 123456
+

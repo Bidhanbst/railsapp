@@ -1,0 +1,27 @@
+---
+-  hosts: all
+   become: true
+   vars_files:
+    - env_variables
+   tasks: 
+   - name: Make sure universe repository is enabled
+     apt_repository:
+      repo: 'ppa:brightbox/ruby-ng'
+      state: present
+      update_cache: True
+   - name: Update and upgrade apt packages
+     become: true
+     apt:
+       upgrade: yes
+       update_cache: yes
+       cache_valid_time: 86400 #One day
+   - name: Installing required packages
+     apt:
+      name: "{{ item }}"
+      state: present
+     with_items: "{{ ruby_packages }}"
+   - name: Install Bundler
+     become_user: vagrant
+     command: bash -lc "bundle install --binstubs"
+    
+
