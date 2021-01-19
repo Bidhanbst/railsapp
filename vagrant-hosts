@@ -1,3 +1,3 @@
 [vagrant-vms]
-192.168.1.107  ansible_user=vagrant ansible_ssh_private_key_file=/home/bidhan/ansible/ruby/private-key
+192.168.1.70  ansible_user=vagrant ansible_ssh_private_key_file=/home/bidhan/ansible/ruby/private-key ansible_ssh_port=22
 

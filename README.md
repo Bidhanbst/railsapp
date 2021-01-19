@@ -6,7 +6,7 @@ Vagrant.configure("2") do |config|
 config.vm.box = "hashicorp/bionic64"
 config.vm.box_version = "1.0.282"
 config.vm.provision "ansible" do |ansible|
-  ansible.playbook = "playbook.yml"
+  ansible.playbook = "playbook.yaml"
  end
  end
 ```
@@ -28,12 +28,13 @@ $ vagrant provision
 3. Specify the playbook file to run in vagrant configuration file.
 ```
 config.vm.provision "ansible" do |ansible|
-  ansible.playbook = "playbook.yml"
+  ansible.playbook = "playbook.yaml"
  end
 ```
-4. Running the above vagrant config file will automatically run the provisioning playbook on that vagrant host.
-5. In case of running ansible playbook manually, create a file vagrant-hosts to specify the target nodes where playbooks are intended to run.
-6. To run ansible manually apply the following command on the project directory.
+4. Create a env_variables file which consists of variables that represent the variations among the installation.
+5. Running the above vagrant config file will automatically run the provisioning playbook on that vagrant host.
+6. In case of running ansible playbook manually, create a file vagrant-hosts to specify the target nodes where playbooks are intended to run.
+7. To run ansible manually apply the following command on the project directory.
 ```
 $ ansible-playbook -i vagrant-hosts vagrant.yaml -vvv
 ```
