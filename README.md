@@ -14,8 +14,8 @@ config.vm.provision "ansible" do |ansible|
 ```
 $ vagrant up
 ```
-This will start the VM, and run the provisioning playbook (on the first VM startup).
-To re-run a playbook on an existing VM, just run:
+- This will start the VM, and run the provisioning playbook (on the first VM startup).
+- To re-run a playbook on an existing VM, just run:
 ```
 $ vagrant provision
 ```
